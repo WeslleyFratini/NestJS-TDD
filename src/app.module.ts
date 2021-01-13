@@ -3,6 +3,7 @@ import { ExchangeModule } from './exchange/exchange.module';
 import { CurrenciesModule } from './currencies/currencies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfig } from './config/typeorm';
+import { CurrenciesModule } from './currencies/currencies.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(TypeOrmConfig), ExchangeModule, CurrenciesModule],

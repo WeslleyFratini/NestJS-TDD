@@ -1,6 +1,8 @@
 import { BadRequestException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { CurrenciesService, ExchangeService } from './exchange.service';
+import { ExchangeService } from './exchange.service';
+import { ExchangeInputType } from './types/exchange-input.type';
+import { CurrenciesService } from '../currencies/currencies.service';
 
 
 describe('ExchangeService', () => {
@@ -44,7 +46,8 @@ describe('ExchangeService', () => {
     });
 
     it('should be not throw if called with valid params', async () => {
-      await expect(service.convertAmount(mockData)).resolves.not.toThrow();
+      await expect(
+        service.convertAmount(mockData)).resolves.not.toThrow();
     });
 
     it('should be called getCurrency twice', async () => {
@@ -89,4 +92,4 @@ describe('ExchangeService', () => {
       });
     });
   });
-}); s
+}); 
