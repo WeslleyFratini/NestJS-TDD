@@ -38,8 +38,8 @@ describe('CurrenciesService', () => {
     });
 
     it('should be when repository return', async () => {
-      (repository.getCurrency as jest.Mock).mockReturnValue({})
-      expect(await service.getCurrency('USD')).toEqual({});
+      (repository.getCurrency as jest.Mock).mockReturnValue({ currency: 'USD', value: 1 });
+      expect(await service.getCurrency('USD')).toEqual({ currency: 'USD', value: 1 });
     });
   });
 });
